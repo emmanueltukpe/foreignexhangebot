@@ -1,8 +1,8 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
+require("dotenv").config();
 
-const url = "https://talentbase.ng/dollar-usd-to-naira-black-market/";
-
+url = process.env.URL
 async function scrapeData() {
   try {
     const unsortedArray = [];
