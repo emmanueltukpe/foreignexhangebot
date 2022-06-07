@@ -20,5 +20,4 @@ $ /start
 
 ## Images
 
-![](images/start.png)
-![](images/bot-is-running.png)
+<img src="images/start.png" width="300" height="500"> <img src="images/bot-is-running.png" width="500" height="300">
