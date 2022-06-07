@@ -39,7 +39,6 @@ async function scrapeData() {
       arrayAsString.push(objectAsString);
     }
     const answer = arrayAsString.join("\n");
-    console.log(answer);
     return answer;
   } catch (error) {
     console.log(error);
