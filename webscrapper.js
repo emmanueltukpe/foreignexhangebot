@@ -33,12 +33,14 @@ async function scrapeData() {
       objectKey.forEach((key, i) => (objects[key] = groupedArray[index][i]));
       currencyConversion.push(objects);
     }
-    const arrayAsString = [];
+    var arrayAsString = [];
     for (let index = 0; index < currencyConversion.length; index++) {
-      const objectAsString = `${objectKey[0]}: ${currencyConversion[index].Date} \n ${objectKey[1]}: ${currencyConversion[index].Currency} \n ${objectKey[2]}: ${currencyConversion[index].Selling} \n ${objectKey[3]}: ${currencyConversion[index].Buying} \n`;
+      const objectAsString = `${objectKey[1]}: ${currencyConversion[index].Currency} \n ${objectKey[2]}: ${currencyConversion[index].Selling} \n ${objectKey[3]}: ${currencyConversion[index].Buying} \n`;
       arrayAsString.push(objectAsString);
     }
+    arrayAsString = [`${objectKey[0]}: ${currencyConversion[0].Date} `, ...arrayAsString]
     const answer = arrayAsString.join("\n");
+    console.log(answer);
     return answer;
   } catch (error) {
     console.log(error);
