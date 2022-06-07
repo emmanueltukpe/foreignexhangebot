@@ -52,7 +52,7 @@ bot.hears(/\/stop (.+)/, async(ctx) => {
     if ((result.includes(chatId.toString()) ) == false) {
            client.lRem('id', 1,  `${chatId}`)
         }
-     ctx.reply("Bot stopped, to continur recieving updates, type /start")
+     ctx.reply("Bot stopped, to continue recieving updates, type /start")
 })
 
 bot.launch()
