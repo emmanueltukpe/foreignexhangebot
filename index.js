@@ -45,6 +45,16 @@ bot.start(async (ctx) => {
            client.lPush('id', `${chatId}`)
         }
 })
+
+bot.hears(/\/stop (.+)/, async(ctx) => {
+     const result = await client.lRange('id', 0, -1)
+    const chatId = ctx.message.chat.id
+    if ((result.includes(chatId.toString()) ) == false) {
+           client.lRem('id', 1,  `${chatId}`)
+        }
+     ctx.reply("Bot stopped, to continur recieving updates, type /start")
+})
+
 bot.launch()
 app.listen(port || process.env.PORT, () => {
     console.log(`Listening on port ${port}`);
