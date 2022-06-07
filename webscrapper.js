@@ -40,7 +40,6 @@ async function scrapeData() {
     }
     arrayAsString = [`${objectKey[0]}: ${currencyConversion[0].Date} `, ...arrayAsString]
     const answer = arrayAsString.join("\n");
-    console.log(answer);
     return answer;
   } catch (error) {
     console.log(error);
