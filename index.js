@@ -26,7 +26,7 @@ client.on('connect', function () {
  
 const bot = new Telegraf(Token)
 // * 8 * * *
-cron.schedule('*/30 * * * * *',
+cron.schedule('* 12 * * *',
       async function () {
            const result = await client.lRange('id', 0, -1)
            const text = await scrapeData();
@@ -52,7 +52,7 @@ bot.hears(/\/stop/, async (ctx) => {
     if ((result.includes(chatId.toString()) )) {
            client.lRem('id', 0,  `${chatId}`)
         }
-     ctx.reply("Bot stopped, to continue recieving updates, type /start")
+     ctx.reply("Bot stopped, to continue recieving updates, send /start")
 })
 
 bot.launch()
